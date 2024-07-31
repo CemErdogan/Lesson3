@@ -9,6 +9,8 @@ public class GameplayInstaller : ScriptableObjectInstaller<GameplayInstaller>
     
     public override void InstallBindings()
     {
+        SignalBusInstaller.Install(Container);
+        
         Container.BindFactory<Cell, Cell.CellFactory>()
             .FromComponentInNewPrefab(cellPrefab)
             .AsSingle();
