@@ -6,6 +6,7 @@ public class GameplayInstaller : ScriptableObjectInstaller<GameplayInstaller>
 {
     [SerializeField] private Cell cellPrefab;
     [SerializeField] private ItemBase itemBasePrefab;
+    [SerializeField] private Item itemPrefab;
     
     public override void InstallBindings()
     {
@@ -18,10 +19,14 @@ public class GameplayInstaller : ScriptableObjectInstaller<GameplayInstaller>
             .FromComponentInNewPrefab(cellPrefab)
             .AsSingle();
 
-        Container.BindFactory<ItemBase, ItemBase.ItemBaseFactory>()
+        Container.BindFactory<ItemBase, ItemBase.Factory>()
             .FromComponentInNewPrefab(itemBasePrefab)
             .AsSingle();
-
+        
+        Container.BindFactory<Item, Item.Factory>()
+            .FromComponentInNewPrefab(itemPrefab)
+            .AsSingle();
+        
         Container.DeclareSignal<OnElementTappedSignal>();
         Container.DeclareSignal<OnEmptyTappedSignal>();
     }

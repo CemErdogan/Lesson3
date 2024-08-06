@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public class Item : MonoBehaviour
 {
@@ -24,4 +25,6 @@ public class Item : MonoBehaviour
         }
     }
     private Cell _cell;
+    
+    public class Factory : PlaceholderFactory<Item> { }
 }
