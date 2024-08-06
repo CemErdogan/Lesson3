@@ -2,9 +2,7 @@ using System;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Items
-{
-    public class CubeItem : Item
+public class CubeItem : Item
     {
         [Inject] ImageLibService _imageLibService;
         private MatchType _matchType;
@@ -161,4 +159,3 @@ namespace Game.Items
             return GetSpriteForMatchType();
         }
     }
-}
