@@ -17,6 +17,9 @@ public class GameplayInstaller : ScriptableObjectInstaller<GameplayInstaller>
         Container.Bind<Borders>().FromComponentInHierarchy()
             .AsSingle();
 
+        Container.Bind<ItemFactory>().FromComponentInHierarchy()
+            .AsSingle();
+
         Container.Bind<ImageLibService>().FromComponentInHierarchy()
             .AsSingle();
         

@@ -95,7 +95,7 @@ public class Board : MonoBehaviour
     {
         for (int x = 0; x < Rows; x++)
         {
-            for (int y = 0; y < Cols; y++)
+            for (int y = 0; y < Cols; y++) 
             {
                 var cell = _cellFactory.Create();
                 cell.transform.SetParent(cellParent);

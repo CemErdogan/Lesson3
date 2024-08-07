@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Assertions;
 using Zenject;
 
 public class ItemFactory : MonoBehaviour
@@ -8,6 +9,9 @@ public class ItemFactory : MonoBehaviour
 
     public Item Create(ItemType itemType, Transform parent, int layerCount = 2, ItemType itemTypeCliked = ItemType.None)
     {
+        Assert.IsNotNull(parent, "parent is null");
+        Assert.IsNotNull(_itemBaseFactory, "_itemBaseFactory is null");
+        
         var itemBase = _itemBaseFactory.Create();
         Item item = null;
         switch (itemType)
