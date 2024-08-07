@@ -4,7 +4,6 @@ using Zenject;
 
 public class ItemFactory : MonoBehaviour
 {
-    [Inject] private Item.Factory _factory;
     [Inject] private ItemBase.Factory _itemBaseFactory;
 
     public Item Create(ItemType itemType, Transform parent, int layerCount = 2, ItemType itemTypeCliked = ItemType.None)

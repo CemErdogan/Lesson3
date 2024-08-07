@@ -1,5 +1,4 @@
 using UnityEngine;
-using Zenject;
 
 public abstract class Item : MonoBehaviour
 {
@@ -100,6 +99,4 @@ public abstract class Item : MonoBehaviour
 
         return spriteRenderer;
     }
-
-    public class Factory : PlaceholderFactory<Item> { }
 }
